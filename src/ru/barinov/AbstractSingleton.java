@@ -23,7 +23,8 @@ public class AbstractSingleton {
         else {
             System.out.println("2");
             try {
-                INSTANCE_MAP.put(instanceClass, instanceClass.getDeclaredConstructor().newInstance());
+                T instance = instanceClass.getDeclaredConstructor().newInstance();
+                INSTANCE_MAP.put(instanceClass, instance);
             } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
                 e.printStackTrace();
             }
