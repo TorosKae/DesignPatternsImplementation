@@ -8,7 +8,13 @@ import java.util.Map;
 /**
  * This class provides basic implementation of Singleton Pattern
  * to use this just make an inheritance of this class
- *
+ * initialization processes the next way
+ * MySingleton mySingleton = null;
+ *         try {
+ *             mySingleton = MySingleton.getInstance(MySingleton.class);
+ *         } catch (IllegalAccessException | InstantiationException e) {
+ *             e.printStackTrace();
+ *         }
  */
 public class AbstractSingleton {
     private static Map<Class<? extends AbstractSingleton>, AbstractSingleton> INSTANCE_MAP
@@ -18,20 +24,17 @@ public class AbstractSingleton {
     }
 
     public static <T extends AbstractSingleton> T getInstance(Class<T> instanceClass)
-            throws  IllegalAccessException,
-                    InstantiationException,
-                    ClassCastException {
-        System.out.println("instanceClass "+instanceClass);
+            throws IllegalAccessException,
+            InstantiationException,
+            ClassCastException {
+
         if (INSTANCE_MAP.containsKey(instanceClass)) {
-            System.out.println("1");
             return (T) INSTANCE_MAP.get(instanceClass);
-        }
-        else {
-            System.out.println("2");
+        } else {
             try {
                 Constructor ctor = instanceClass.getDeclaredConstructor();
                 ctor.setAccessible(true);
-                T instance = (T)ctor.newInstance();
+                T instance = (T) ctor.newInstance();
                 ctor.setAccessible(false);
                 INSTANCE_MAP.put(instanceClass, instance);
             } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
