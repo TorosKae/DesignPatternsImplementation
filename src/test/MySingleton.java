@@ -1,8 +1,9 @@
 package test;
 
 import ru.barinov.AbstractSingleton;
+import ru.barinov.AbstractThreadSafeSingleton;
 
-public class MySingleton extends AbstractSingleton{
+public class MySingleton extends AbstractThreadSafeSingleton {
     private String fieldName;
     private int fieldInt = 0;
 //    private MySingleton() {

@@ -24,23 +24,20 @@ public class AbstractSingleton {
     }
 
     public static <T extends AbstractSingleton> T getInstance(Class<T> instanceClass)
-            throws IllegalAccessException,
-            InstantiationException,
-            ClassCastException {
+            throws IllegalAccessException, InstantiationException,
+            ClassCastException, InvocationTargetException, NoSuchMethodException {
 
         if (INSTANCE_MAP.containsKey(instanceClass)) {
+            System.out.println(INSTANCE_MAP.size());
             return (T) INSTANCE_MAP.get(instanceClass);
         } else {
-            try {
-                Constructor ctor = instanceClass.getDeclaredConstructor();
-                ctor.setAccessible(true);
-                T instance = (T) ctor.newInstance();
-                ctor.setAccessible(false);
-                INSTANCE_MAP.put(instanceClass, instance);
-            } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            Constructor ctor = instanceClass.getDeclaredConstructor();
+            ctor.setAccessible(true);
+            T instance = (T) ctor.newInstance();
+            INSTANCE_MAP.put(instanceClass, instance);
+            System.out.println(INSTANCE_MAP.size());
             return (T) INSTANCE_MAP.get(instanceClass);
         }
+
     }
 }

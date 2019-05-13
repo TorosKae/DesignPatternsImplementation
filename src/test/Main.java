@@ -1,20 +1,28 @@
 package test;
 
+
+import java.lang.reflect.InvocationTargetException;
+
 public class Main {
 
-    public static void main(String[] args) {
-        MySingleton mySingleton = null;
-        try {
-            mySingleton = MySingleton.getInstance(MySingleton.class);
-        } catch (IllegalAccessException | InstantiationException e) {
-            e.printStackTrace();
+    public static void main(String[] args)
+            throws InvocationTargetException,
+            NoSuchMethodException,
+            IllegalAccessException,
+            InstantiationException {
+        int cnt = 10;
+        Thread[] threads = new Thread[cnt];
+        for (int i = 0; i < cnt; i++) {
+            threads[i] = new Thread(()->{
+                try {
+                    MySingleton mySingleton = MySingleton.getInstance(MySingleton.class);
+                    System.out.println(mySingleton.toString());
+                } catch (IllegalAccessException | InstantiationException | InvocationTargetException | NoSuchMethodException e) {
+                    e.printStackTrace();
+                }
+            });
+            threads[i].start();
         }
-        System.out.println(mySingleton.toString());
-        try {
-            MySingleton mySingleton2 = (MySingleton) MySingleton.getInstance(MySingleton.class);
-        } catch (IllegalAccessException | InstantiationException e) {
-            e.printStackTrace();
-        }
-        System.out.println(mySingleton.toString());
+
     }
 }
