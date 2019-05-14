@@ -1,5 +1,3 @@
-package test;
-
 import ru.barinov.singleton.AbstractThreadSafeSingleton;
 
 public class MySingleton extends AbstractThreadSafeSingleton {
