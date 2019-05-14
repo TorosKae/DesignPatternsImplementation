@@ -1,7 +1,9 @@
 package test.java;
 
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import ru.barinov.prototype.ItemBasic;
 import ru.barinov.prototype.ItemPrototype;
 
@@ -21,7 +23,9 @@ class ItemBasicTest extends ItemPrototype {
 
     @Test
     void getWeight1() {
-
+    float actual = 56;
+    float expect = 56;
+        assertEquals(expect,actual);
     }
 
     @Test
