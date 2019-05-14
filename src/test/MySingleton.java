@@ -1,7 +1,6 @@
 package test;
 
-import ru.barinov.AbstractSingleton;
-import ru.barinov.AbstractThreadSafeSingleton;
+import ru.barinov.singleton.AbstractThreadSafeSingleton;
 
 public class MySingleton extends AbstractThreadSafeSingleton {
     private String fieldName;

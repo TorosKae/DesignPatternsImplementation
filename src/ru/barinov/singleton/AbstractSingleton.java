@@ -1,4 +1,4 @@
-package ru.barinov;
+package ru.barinov.singleton;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
