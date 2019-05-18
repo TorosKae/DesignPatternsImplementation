@@ -1,18 +1,26 @@
 package ru.barinov.prototype;
 
+/**
+ * all clothes here
+ *
+ */
 public class ItemClothes extends ItemPrototype{
 
-    String color;
+    private String color;
 
     public String getColor() {
         return color;
     }
 
+    /**
+     * @param color identify the color of suite
+     */
     public void setColor(String color) {
         this.color = color;
     }
 
     public ItemClothes() {
+        this.type = "clothes";
     }
 
     private ItemClothes(ItemClothes target) {
@@ -26,5 +34,12 @@ public class ItemClothes extends ItemPrototype{
     public ItemPrototype clone() {
         return new ItemClothes(this);
     }
-
+    @Override
+    public String toString() {
+        return "type " + this.type
+                + " name " + this.getName()
+                + " weight " + this.getWeight()
+                + " producer " + this.getProducer()
+                + " color " + this.getColor();
+    }
 }

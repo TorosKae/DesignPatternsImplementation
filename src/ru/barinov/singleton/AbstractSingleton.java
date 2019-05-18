@@ -9,9 +9,9 @@ import java.util.Map;
  * This class provides basic implementation of Singleton Pattern
  * to use this just make an inheritance of this class
  * initialization processes the next way
- * MySingleton mySingleton = null;
+ * ru.barinov.singleton.MySingleton mySingleton = null;
  *         try {
- *             mySingleton = MySingleton.getInstance(MySingleton.class);
+ *             mySingleton = ru.barinov.singleton.MySingleton.getInstance(ru.barinov.singleton.MySingleton.class);
  *         } catch (IllegalAccessException | InstantiationException e) {
  *             e.printStackTrace();
  *         }

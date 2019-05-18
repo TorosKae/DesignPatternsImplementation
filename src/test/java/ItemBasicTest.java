@@ -1,3 +1,4 @@
+/*
 package test.java;
 
 
@@ -64,4 +65,4 @@ class ItemBasicTest extends ItemPrototype {
     public ItemPrototype clone() {
         return this;
     }
-}
+}*/

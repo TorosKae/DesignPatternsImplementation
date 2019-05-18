@@ -6,47 +6,63 @@ import java.util.Objects;
  * Class represents some abstract items
  * from the backpack
  * it has basic attributes
- * and should clone itself
+ * and could clone itself
+ * you could clone an object
+ * and ain't gonna rewrite repeatable attributes
+ * every implementation have it's own specialities
+ * f.e. clothes has + color
  */
 
 public abstract class ItemPrototype implements  Cloneable {
     private float weight;
     private String name;
     private String producer;
+    private String group;
+    String type;
 
-    public float getWeight() {
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    float getWeight() {
         return weight;
     }
 
-    public void setWeight(float weight) {
+    void setWeight(float weight) {
         this.weight = weight;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public String getProducer() {
+    String getProducer() {
         return producer;
     }
 
-    public void setProducer(String producer) {
+    void setProducer(String producer) {
         this.producer = producer;
     }
 
-    protected ItemPrototype() {
+    ItemPrototype() {
     }
 
-    protected ItemPrototype(ItemPrototype target) {
+    ItemPrototype(ItemPrototype target) {
         //basic attributes clone
         if (target != null) {
             this.weight = target.weight;
             this.name = target.name;
             this.producer = target.producer;
+            this.type = target.type;
+            this.group = target.group;
         }
     }
 

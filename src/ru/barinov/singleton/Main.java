@@ -1,3 +1,5 @@
+package ru.barinov.singleton;
+
 import java.lang.reflect.InvocationTargetException;
 
 public class Main {

@@ -1,8 +1,14 @@
 package ru.barinov.prototype;
 
+/**
+ * food has an extra attributes bgd
+ * is protein
+ * fat
+ * carbs
+ */
 public class ItemFood extends ItemPrototype{
 
-    String bgd = "0;0;0";
+    private String bgd = "0;0;0";
 
     public String getBgd() {
         return bgd;
@@ -13,6 +19,7 @@ public class ItemFood extends ItemPrototype{
     }
 
     public ItemFood() {
+        this.type = "food";
     }
 
     private ItemFood(ItemFood target) {
@@ -26,5 +33,12 @@ public class ItemFood extends ItemPrototype{
     public ItemPrototype clone() {
         return new ItemFood(this);
     }
-
+    @Override
+    public String toString() {
+        return "type " + this.type
+                + " name " + this.getName()
+                + " weight " + this.getWeight()
+                + " producer " + this.getProducer()
+                + " bgd " + this.getBgd();
+    }
 }
