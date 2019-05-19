@@ -19,7 +19,7 @@ public class ItemFood extends ItemPrototype{
     }
 
     public ItemFood() {
-        this.type = "food";
+        this.setType("food");
     }
 
     private ItemFood(ItemFood target) {
@@ -35,7 +35,7 @@ public class ItemFood extends ItemPrototype{
     }
     @Override
     public String toString() {
-        return "type " + this.type
+        return "type " + this.getType()
                 + " name " + this.getName()
                 + " weight " + this.getWeight()
                 + " producer " + this.getProducer()

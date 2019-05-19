@@ -1,23 +1,22 @@
 package ru.barinov.builder;
 
-import ru.barinov.prototype.*;
+import ru.barinov.prototype.ItemPrototype;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BuilderPackWoman implements IBuilderPack{
+public class BuilderPackMan implements IBuilderPack{
     private List<ItemPrototype> items;
-    private static final String womanGroup = "woman";
+    private static final String manGroup = "man";
     private void findStuffByGroup (String type,float maxWeight, int maxItemAmount){
         int itemAmount = 0;
         //MainBuilder.repository is temporary point of all Data
         for (ItemPrototype item:MainBuilder.repository
         ) {
-            //System.out.println("item "+item.getGroup()+" lastIndexOf "+item.getGroup().lastIndexOf(womanGroup));
-            if ((item.getGroup().lastIndexOf(womanGroup)>=0
-                || item.getGroup().lastIndexOf("unisex")>=0)
-                && item.getType().equals(type)
-                && (maxWeight == 0||item.getWeight() <= maxWeight)){
+            if ((item.getGroup().lastIndexOf(manGroup)>=0
+                    || item.getGroup().lastIndexOf("unisex")>=0)
+                    && item.getType().equals(type)
+                    && (maxWeight == 0||item.getWeight() <= maxWeight)){
                 items.add(item);
                 itemAmount ++;
                 if (itemAmount == maxItemAmount) break;
@@ -51,7 +50,7 @@ public class BuilderPackWoman implements IBuilderPack{
         findStuffByGroup("food",maxWeight,maxItemAmount);
     }
 
-    public Pack getResult(){
+    Pack getResult(){
         return new Pack(items);
     }
 }

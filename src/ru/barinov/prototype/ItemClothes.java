@@ -20,7 +20,7 @@ public class ItemClothes extends ItemPrototype{
     }
 
     public ItemClothes() {
-        this.type = "clothes";
+        this.setType("clothes");
     }
 
     private ItemClothes(ItemClothes target) {
@@ -36,7 +36,7 @@ public class ItemClothes extends ItemPrototype{
     }
     @Override
     public String toString() {
-        return "type " + this.type
+        return "type " + this.getType()
                 + " name " + this.getName()
                 + " weight " + this.getWeight()
                 + " producer " + this.getProducer()

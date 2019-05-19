@@ -18,7 +18,7 @@ public class ItemPack extends ItemPrototype{
     }
 
     public ItemPack() {
-        this.type = "pack";
+        this.setType("pack");
     }
 
     private ItemPack(ItemPack target) {
@@ -34,7 +34,7 @@ public class ItemPack extends ItemPrototype{
     }
     @Override
     public String toString() {
-        return "type " + this.type
+        return "type " + this.getType()
                 + " name " + this.getName()
                 + " weight " + this.getWeight()
                 + " producer " + this.getProducer()

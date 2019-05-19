@@ -7,7 +7,7 @@ package ru.barinov.prototype;
 public class ItemBasic extends ItemPrototype {
 
     public ItemBasic() {
-        this.type = "basic";
+        this.setType("basic");
     }
 
     private ItemBasic(ItemBasic target) {
@@ -21,7 +21,7 @@ public class ItemBasic extends ItemPrototype {
 
     @Override
     public String toString() {
-        return "type " + this.type
+        return "type " + this.getType()
                 + " name " + this.getName()
                 + " weight " + this.getWeight()
                 + " producer " + this.getProducer();

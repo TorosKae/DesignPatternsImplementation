@@ -18,7 +18,15 @@ public abstract class ItemPrototype implements  Cloneable {
     private String name;
     private String producer;
     private String group;
-    String type;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getGroup() {
         return group;
@@ -28,27 +36,27 @@ public abstract class ItemPrototype implements  Cloneable {
         this.group = group;
     }
 
-    float getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    void setWeight(float weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    String getProducer() {
+    public String getProducer() {
         return producer;
     }
 
-    void setProducer(String producer) {
+    public void setProducer(String producer) {
         this.producer = producer;
     }
 
