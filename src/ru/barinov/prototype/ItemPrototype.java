@@ -62,6 +62,13 @@ public abstract class ItemPrototype implements  Cloneable {
 
     ItemPrototype() {
     }
+    public ItemPrototype(float weight, String name, String producer, String
+            group) {
+        this.setWeight(weight);
+        this.setName(name);
+        this.setProducer(producer);
+        this.setGroup(group);
+    }
 
     ItemPrototype(ItemPrototype target) {
         //basic attributes clone

@@ -10,6 +10,12 @@ public class ItemBasic extends ItemPrototype {
         this.setType("basic");
     }
 
+    public ItemBasic(float weight, String name, String producer, String
+            group) {
+        super(weight,name,producer,group);
+        this.setType("basic");
+    }
+
     private ItemBasic(ItemBasic target) {
         super(target);
     }

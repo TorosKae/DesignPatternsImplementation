@@ -6,7 +6,7 @@ package ru.barinov.prototype;
  * fat
  * carbs
  */
-public class ItemFood extends ItemPrototype{
+public class ItemFood extends ItemPrototype {
 
     private String bgd = "0;0;0";
 
@@ -22,9 +22,16 @@ public class ItemFood extends ItemPrototype{
         this.setType("food");
     }
 
+    public ItemFood(float weight, String name, String producer, String
+            group, String bgd) {
+        super(weight, name, producer, group);
+        this.setType("food");
+        this.setBgd(bgd);
+    }
+
     private ItemFood(ItemFood target) {
         super(target);
-        if(target != null){
+        if (target != null) {
             this.bgd = target.bgd;
         }
     }
@@ -33,6 +40,7 @@ public class ItemFood extends ItemPrototype{
     public ItemPrototype clone() {
         return new ItemFood(this);
     }
+
     @Override
     public String toString() {
         return "type " + this.getType()

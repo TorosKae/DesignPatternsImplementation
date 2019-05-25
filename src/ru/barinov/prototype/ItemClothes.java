@@ -22,6 +22,12 @@ public class ItemClothes extends ItemPrototype{
     public ItemClothes() {
         this.setType("clothes");
     }
+    public ItemClothes(float weight, String name, String producer, String
+            group, String color) {
+        super(weight,name,producer,group);
+        this.setType("clothes");
+        this.setColor(color);
+    }
 
     private ItemClothes(ItemClothes target) {
         super(target);

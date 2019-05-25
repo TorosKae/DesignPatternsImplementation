@@ -5,7 +5,7 @@ package ru.barinov.prototype;
  * and uses to collect other carry other items
  * ans itself
  */
-public class ItemPack extends ItemPrototype{
+public class ItemPack extends ItemPrototype {
 
     private float volume;
 
@@ -21,9 +21,16 @@ public class ItemPack extends ItemPrototype{
         this.setType("pack");
     }
 
+    public ItemPack(float weight, String name, String producer, String
+            group, float volume) {
+        super(weight, name, producer, group);
+        this.setType("pack");
+        this.setVolume(volume);
+    }
+
     private ItemPack(ItemPack target) {
         super(target);
-        if(target != null){
+        if (target != null) {
             this.volume = target.volume;
         }
     }
@@ -32,6 +39,7 @@ public class ItemPack extends ItemPrototype{
     public ItemPrototype clone() {
         return new ItemPack(this);
     }
+
     @Override
     public String toString() {
         return "type " + this.getType()
