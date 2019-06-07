@@ -34,7 +34,5 @@ public class MainFabric {
              ) {
             System.out.println(x.toString());
         }
-
-
     }
 }
